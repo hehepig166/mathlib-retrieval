@@ -1,5 +1,8 @@
-```
+```sh
 python .\src\scripts\test_mathlib_nameretrieval.py .\data\all\found_theorems_without_prefix_229064.txt
+```
+
+```
 reading .\data\all\found_theorems_without_prefix_229064.txt...
 229064 theorems extracted
 162867 theorems filtered by max_depth 2
