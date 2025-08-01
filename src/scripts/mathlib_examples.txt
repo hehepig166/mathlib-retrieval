@@ -1,0 +1,649 @@
+Nat.div_eq_sub_mod_div :
+
+∀ {m n : ℕ}, m / n = (m - m % n) / n
+
+=======================
+
+Real.contDiffAt_rpow_of_ne :
+
+∀ (p : ℝ × ℝ), p.1 ≠ 0 → ∀ {n : WithTop ℕ∞}, ContDiffAt ℝ n (fun p ↦ p.1 ^ p.2) p
+
+=======================
+
+Set.Sum.elim_range :
+
+∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (f : α → γ) (g : β → γ),
+  Set.range (Sum.elim f g) = Set.range f ∪ Set.range g
+
+=======================
+
+Finset.vaddAssocClass :
+
+∀ {α : Type u_2} {β : Type u_3} {γ : Type u_4} [inst : DecidableEq γ] [inst_1 : VAdd α β] [inst_2 : VAdd α γ]
+  [inst_3 : VAdd β γ] [VAddAssocClass α β γ], VAddAssocClass α β (Finset γ)
+
+=======================
+
+Nat.succ_mul_centralBinom_succ :
+
+∀ (n : ℕ), (n + 1) * (n + 1).centralBinom = 2 * (2 * n + 1) * n.centralBinom
+
+=======================
+
+Set.image_single_Ioo_left :
+
+∀ {ι : Type u_1} {α : ι → Type u_2} [inst : DecidableEq ι] [inst_1 : (i : ι) → PartialOrder (α i)]
+  [inst_2 : (i : ι) → Zero (α i)] (i : ι) (a : α i), Pi.single i '' Set.Ioo a 0 = Set.Ioo (Pi.single i a) 0
+
+=======================
+
+Finset.Nonempty.of_compls :
+
+∀ {α : Type u_2} [inst : BooleanAlgebra α] {s : Finset α}, s.compls.Nonempty → s.Nonempty
+
+=======================
+
+Nat.div_dvd_iff_dvd_mul :
+
+∀ {a b c : ℕ}, b ∣ a → 0 < b → (a / b ∣ c ↔ a ∣ b * c)
+
+=======================
+
+Real.circleAverage_add :
+
+∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] {f₁ f₂ : ℂ → E} {c : ℂ} {R : ℝ},
+  CircleIntegrable f₁ c R →
+    CircleIntegrable f₂ c R → Real.circleAverage (f₁ + f₂) c R = Real.circleAverage f₁ c R + Real.circleAverage f₂ c R
+
+=======================
+
+Set.Nonempty.of_infs_left :
+
+∀ {α : Type u_2} [inst : SemilatticeInf α] {s t : Set α}, (s ⊼ t).Nonempty → s.Nonempty
+
+=======================
+
+Finset.cast_divConst :
+
+∀ {G : Type u_1} [inst : Group G] [inst_1 : DecidableEq G] {𝕜 : Type u_3} [inst_2 : Semifield 𝕜] [CharZero 𝕜]
+  (A B : Finset G), ↑(A.divConst B) = ↑(A / B).card / ↑A.card
+
+=======================
+
+Int.fract_natCast_add :
+
+∀ {R : Type u_2} [inst : Ring R] [inst_1 : LinearOrder R] [inst_2 : FloorRing R] [IsStrictOrderedRing R] (n : ℕ)
+  (a : R), Int.fract (↑n + a) = Int.fract a
+
+=======================
+
+Set.indicator_nonpos_le_indicator :
+
+∀ {α : Type u_2} {M : Type u_3} [inst : Zero M] [inst_1 : LinearOrder M] (s : Set α) (f : α → M),
+  {a | f a ≤ 0}.indicator f ≤ s.indicator f
+
+=======================
+
+Finset.mem_image₂_of_mem :
+
+∀ {α : Type u_1} {β : Type u_3} {γ : Type u_5} [inst : DecidableEq γ] {f : α → β → γ} {s : Finset α} {t : Finset β}
+  {a : α} {b : β}, a ∈ s → b ∈ t → f a b ∈ Finset.image₂ f s t
+
+=======================
+
+Nat.mem_divisors_self :
+
+∀ (n : ℕ), n ≠ 0 → n ∈ n.divisors
+
+=======================
+
+Finset.addZeroClass.eq_1 :
+
+∀ {α : Type u_2} [inst : DecidableEq α] [inst_1 : AddZeroClass α],
+  Finset.addZeroClass = Function.Injective.addZeroClass Finset.toSet ⋯ ⋯ ⋯
+
+=======================
+
+Real.cos_pi_div_two_sub :
+
+∀ (x : ℝ), Real.cos (Real.pi / 2 - x) = Real.sin x
+
+=======================
+
+Int.sub_left_le_of_le_add :
+
+∀ {a b c : ℤ}, a ≤ b + c → a - b ≤ c
+
+=======================
+
+Finset.addAction.eq_1 :
+
+∀ {α : Type u_2} {β : Type u_3} [inst : DecidableEq β] [inst_1 : DecidableEq α] [inst_2 : AddMonoid α]
+  [inst_3 : AddAction α β], Finset.addAction = { toVAdd := Finset.vadd, zero_vadd := ⋯, add_vadd := ⋯ }
+
+=======================
+
+Set.preimage_neg_Iic :
+
+∀ {α : Type u_1} [inst : AddCommGroup α] [inst_1 : PartialOrder α] [IsOrderedAddMonoid α] (a : α),
+  -Set.Iic a = Set.Ici (-a)
+
+=======================
+
+Nat.Prime.divisors :
+
+∀ {p : ℕ}, Nat.Prime p → p.divisors = {1, p}
+
+=======================
+
+Nat.psub_eq_none :
+
+∀ {m n : ℕ}, m.psub n = none ↔ m < n
+
+=======================
+
+Set.Iic_prod_Iic :
+
+∀ {α : Type u_1} {β : Type u_2} [inst : Preorder α] [inst_1 : Preorder β] (a : α) (b : β),
+  Set.Iic a ×ˢ Set.Iic b = Set.Iic (a, b)
+
+=======================
+
+Int.OfNat.Expr.mul.inj :
+
+∀ {a b a_1 b_1 : Int.OfNat.Expr}, a.mul b = a_1.mul b_1 → a = a_1 ∧ b = b_1
+
+=======================
+
+Int.fmod_eq_of_lt :
+
+∀ {a b : ℤ}, 0 ≤ a → a < b → a.fmod b = a
+
+=======================
+
+Nat.zeckendorf_succ :
+
+∀ (n : ℕ), (n + 1).zeckendorf = (n + 1).greatestFib :: (n + 1 - Nat.fib (n + 1).greatestFib).zeckendorf
+
+=======================
+
+Nat.count_iff_forall :
+
+∀ {p : ℕ → Prop} [inst : DecidablePred p] {n : ℕ}, Nat.count p n = n ↔ ∀ n' < n, p n'
+
+=======================
+
+Finset.erase_ssubset :
+
+∀ {α : Type u_1} [inst : DecidableEq α] {a : α} {s : Finset α}, a ∈ s → s.erase a ⊂ s
+
+=======================
+
+Set.subsingleton_coe_of_subsingleton :
+
+∀ {α : Type u} [Subsingleton α] {s : Set α}, Subsingleton ↑s
+
+=======================
+
+Int.addLeft_one_isCycle :
+
+(Equiv.addLeft 1).IsCycle
+
+=======================
+
+Finset.image₂_left :
+
+∀ {α : Type u_1} {β : Type u_3} {s : Finset α} {t : Finset β} [inst : DecidableEq α],
+  t.Nonempty → Finset.image₂ (fun x x_1 ↦ x) s t = s
+
+=======================
+
+Nat.odd_fermatNumber :
+
+∀ (n : ℕ), Odd n.fermatNumber
+
+=======================
+
+Finset.expect_bij' :
+
+∀ {ι : Type u_1} {κ : Type u_2} {M : Type u_3} [inst : AddCommMonoid M] [inst_1 : _root_.Module ℚ≥0 M] {s : Finset ι}
+  {f : ι → M} {t : Finset κ} {g : κ → M} (i : (a : ι) → a ∈ s → κ) (j : (a : κ) → a ∈ t → ι)
+  (hi : ∀ (a : ι) (ha : a ∈ s), i a ha ∈ t) (hj : ∀ (a : κ) (ha : a ∈ t), j a ha ∈ s),
+  (∀ (a : ι) (ha : a ∈ s), j (i a ha) ⋯ = a) →
+    (∀ (a : κ) (ha : a ∈ t), i (j a ha) ⋯ = a) →
+      (∀ (a : ι) (ha : a ∈ s), f a = g (i a ha)) → (s.expect fun i ↦ f i) = t.expect fun i ↦ g i
+
+=======================
+
+Real.logb_nonneg_iff :
+
+∀ {b x : ℝ}, 1 < b → 0 < x → (0 ≤ Real.logb b x ↔ 1 ≤ x)
+
+=======================
+
+Set.IsPWO.addSubmonoid_closure :
+
+∀ {α : Type u_1} [inst : AddCommMonoid α] [inst_1 : PartialOrder α] [IsOrderedCancelAddMonoid α] {s : Set α},
+  (∀ x ∈ s, 0 ≤ x) → s.IsPWO → (↑(AddSubmonoid.closure s)).IsPWO
+
+=======================
+
+Nat.multinomial_insert :
+
+∀ {α : Type u_1} {s : Finset α} {a : α} [inst : DecidableEq α],
+  a ∉ s → ∀ (f : α → ℕ), Nat.multinomial (insert a s) f = (f a + ∑ i ∈ s, f i).choose (f a) * Nat.multinomial s f
+
+=======================
+
+Set.sep_eq_of_subset :
+
+∀ {α : Type u} {s t : Set α}, s ⊆ t → {x | x ∈ t ∧ x ∈ s} = s
+
+=======================
+
+Int.floor_zero :
+
+∀ {R : Type u_2} [inst : Ring R] [inst_1 : LinearOrder R] [inst_2 : FloorRing R] [IsStrictOrderedRing R], ⌊0⌋ = 0
+
+=======================
+
+Nat.factorization_def :
+
+∀ (n : ℕ) {p : ℕ}, Nat.Prime p → n.factorization p = padicValNat p n
+
+=======================
+
+Set.OrdConnected.dual :
+
+∀ {α : Type u_1} [inst : Preorder α] {s : Set α}, s.OrdConnected → (⇑OrderDual.ofDual ⁻¹' s).OrdConnected
+
+=======================
+
+Nat.lt_of_lt_pred :
+
+∀ {m n : ℕ}, m < n - 1 → m < n
+
+=======================
+
+Real.tendsto_logb_nat_add_one_sub_logb :
+
+∀ {b : ℝ}, Filter.Tendsto (fun k ↦ Real.logb b (↑k + 1) - Real.logb b ↑k) Filter.atTop (nhds 0)
+
+=======================
+
+Finset.not_subset :
+
+∀ {α : Type u_1} {s t : Finset α}, ¬s ⊆ t ↔ ∃ x ∈ s, x ∉ t
+
+=======================
+
+Real.Lp_add_le_tsum_of_nonneg :
+
+∀ {ι : Type u} {f g : ι → ℝ} {p : ℝ},
+  1 ≤ p →
+    (∀ (i : ι), 0 ≤ f i) →
+      (∀ (i : ι), 0 ≤ g i) →
+        (Summable fun i ↦ f i ^ p) →
+          (Summable fun i ↦ g i ^ p) →
+            (Summable fun i ↦ (f i + g i) ^ p) ∧
+              (∑' (i : ι), (f i + g i) ^ p) ^ (1 / p) ≤
+                (∑' (i : ι), f i ^ p) ^ (1 / p) + (∑' (i : ι), g i ^ p) ^ (1 / p)
+
+=======================
+
+Finset.fold_max_le :
+
+∀ {α : Type u_1} {β : Type u_2} {f : α → β} {b : β} {s : Finset α} [inst : LinearOrder β] (c : β),
+  Finset.fold max b f s ≤ c ↔ b ≤ c ∧ ∀ x ∈ s, f x ≤ c
+
+=======================
+
+Set.biUnion_self :
+
+∀ {α : Type u_1} (s : Set α), ⋃ x ∈ s, s = s
+
+=======================
+
+Nat.Icc_insert_succ_right :
+
+∀ {a b : ℕ}, a ≤ b + 1 → insert (b + 1) (Finset.Icc a b) = Finset.Icc a (b + 1)
+
+=======================
+
+Int.add_lt_add_of_lt_of_le :
+
+∀ {a b c d : ℤ}, a < b → c ≤ d → a + c < b + d
+
+=======================
+
+Finset.coeEmb.eq_1 :
+
+∀ {α : Type u_1}, Finset.coeEmb = { toFun := Finset.toSet, inj' := ⋯, map_rel_iff' := ⋯ }
+
+=======================
+
+Set.preimage_neg_Ico :
+
+∀ {α : Type u_1} [inst : AddCommGroup α] [inst_1 : PartialOrder α] [IsOrderedAddMonoid α] (a b : α),
+  -Set.Ico a b = Set.Ioc (-b) (-a)
+
+=======================
+
+Nat.totient_even :
+
+∀ {n : ℕ}, 2 < n → Even n.totient
+
+=======================
+
+Finset.supIndep_empty :
+
+∀ {α : Type u_1} {ι : Type u_3} [inst : Lattice α] [inst_1 : OrderBot α] (f : ι → α), ∅.SupIndep f
+
+=======================
+
+Finset.centerMass_filter_ne_zero :
+
+∀ {R : Type u_1} {E : Type u_3} {ι : Type u_5} [inst : Field R] [inst_1 : AddCommGroup E] [inst_2 : _root_.Module R E]
+  {t : Finset ι} {w : ι → R} (z : ι → E) [inst_3 : (i : ι) → Decidable (w i ≠ 0)],
+  {i ∈ t | w i ≠ 0}.centerMass w z = t.centerMass w z
+
+=======================
+
+Set.up_image :
+
+∀ {α : Type u_1} {β : Type u_2} [inst : MulOneClass α] [inst_1 : MulOneClass β] (f : α →* β) (s : Set α),
+  Set.up (⇑f '' s) = (SetSemiring.imageHom f) (Set.up s)
+
+=======================
+
+Int.Ioc_filter_modEq_card :
+
+∀ (a b : ℤ) {r : ℤ},
+  0 < r → ∀ (v : ℤ), ↑{x ∈ Finset.Ioc a b | x ≡ v [ZMOD r]}.card = max (⌊(↑b - ↑v) / ↑r⌋ - ⌊(↑a - ↑v) / ↑r⌋) 0
+
+=======================
+
+Set.OrdConnected.inter' :
+
+∀ {α : Type u_1} [inst : Preorder α] {s t : Set α} [s.OrdConnected] [t.OrdConnected], (s ∩ t).OrdConnected
+
+=======================
+
+Int.neg_eq_neg :
+
+∀ {a b : ℤ}, -a = -b → a = b
+
+=======================
+
+Nat.instAssociativeHAdd :
+
+Std.Associative fun x1 x2 ↦ x1 + x2
+
+=======================
+
+Set.nonempty_Ici :
+
+∀ {α : Type u_1} [inst : Preorder α] {a : α}, (Set.Ici a).Nonempty
+
+=======================
+
+Real.neg_inv_le_log :
+
+∀ {x : ℝ}, 0 ≤ x → -x⁻¹ ≤ Real.log x
+
+=======================
+
+Int.units_inv_eq_self :
+
+∀ (u : ℤˣ), u⁻¹ = u
+
+=======================
+
+Finset.set_biInter_option_toFinset :
+
+∀ {α : Type u_2} {β : Type u_3} (o : Option α) (f : α → Set β), ⋂ x ∈ o.toFinset, f x = ⋂ x ∈ o, f x
+
+=======================
+
+Finset.card_nbij :
+
+∀ {α : Type u_1} {β : Type u_2} {s : Finset α} {t : Finset β} (i : α → β),
+  Set.MapsTo i ↑s ↑t → Set.InjOn i ↑s → Set.SurjOn i ↑s ↑t → s.card = t.card
+
+=======================
+
+Set.Intersecting.mono :
+
+∀ {α : Type u_1} [inst : SemilatticeInf α] [inst_1 : OrderBot α] {s t : Set α}, t ⊆ s → s.Intersecting → t.Intersecting
+
+=======================
+
+Set.one_le_mulIndicator :
+
+∀ {α : Type u_2} {M : Type u_3} [inst : Preorder M] [inst_1 : One M] {s : Set α} {f : α → M},
+  (∀ a ∈ s, 1 ≤ f a) → ∀ (a : α), 1 ≤ s.mulIndicator f a
+
+=======================
+
+Nat.nth_apply_eq_orderIsoOfNat :
+
+∀ {p : ℕ → Prop} (hf : (setOf p).Infinite) (n : ℕ), Nat.nth p n = ↑((Nat.Subtype.orderIsoOfNat (setOf p)) n)
+
+=======================
+
+Finset.ofDual_sup' :
+
+∀ {α : Type u_2} {ι : Type u_5} [inst : SemilatticeInf α] {s : Finset ι} (hs : s.Nonempty) (f : ι → αᵒᵈ),
+  OrderDual.ofDual (s.sup' hs f) = s.inf' hs (⇑OrderDual.ofDual ∘ f)
+
+=======================
+
+Finset.Colex.singleton_lt_singleton :
+
+∀ {α : Type u_1} [inst : PartialOrder α] {a b : α}, { ofColex := {a} } < { ofColex := {b} } ↔ a < b
+
+=======================
+
+Set.nontrivial_iff_ne_singleton :
+
+∀ {α : Type u} {a : α} {s : Set α}, a ∈ s → (s.Nontrivial ↔ s ≠ {a})
+
+=======================
+
+Finset.mem_erase_of_ne_of_mem :
+
+∀ {α : Type u_1} [inst : DecidableEq α] {s : Finset α} {a b : α}, a ≠ b → a ∈ s → a ∈ s.erase b
+
+=======================
+
+Nat.coprime_primes :
+
+∀ {p q : ℕ}, Nat.Prime p → Nat.Prime q → (p.Coprime q ↔ p ≠ q)
+
+=======================
+
+Int.add_neg_mul_emod_self_left :
+
+∀ (a b c : ℤ), (a + -(b * c)) % b = a % b
+
+=======================
+
+Real.isSquare_iff :
+
+∀ {x : ℝ}, IsSquare x ↔ 0 ≤ x
+
+=======================
+
+Nat.prime_of_mem_primeFactorsList :
+
+∀ {n p : ℕ}, p ∈ n.primeFactorsList → Nat.Prime p
+
+=======================
+
+Int.coe_lcm :
+
+∀ (i j : ℤ), ↑(i.lcm j) = lcm i j
+
+=======================
+
+Nat.left_ne_zero_of_mem_divisorsAntidiagonal :
+
+∀ {n : ℕ} {p : ℕ × ℕ}, p ∈ n.divisorsAntidiagonal → p.1 ≠ 0
+
+=======================
+
+Set.Ici_top :
+
+∀ {α : Type u_1} [inst : PartialOrder α] [inst_1 : OrderTop α], Set.Ici ⊤ = {⊤}
+
+=======================
+
+Set.Icc_eq_empty_of_lt :
+
+∀ {α : Type u_1} [inst : Preorder α] {a b : α}, b < a → Set.Icc a b = ∅
+
+=======================
+
+Set.encard_insert_le :
+
+∀ {α : Type u_1} (s : Set α) (x : α), (insert x s).encard ≤ s.encard + 1
+
+=======================
+
+Real.posLog.eq_1 :
+
+∀ (r : ℝ), r.posLog = max 0 (Real.log r)
+
+=======================
+
+Set.InjOn.mono :
+
+∀ {α : Type u_1} {β : Type u_2} {s₁ s₂ : Set α} {f : α → β}, s₁ ⊆ s₂ → Set.InjOn f s₂ → Set.InjOn f s₁
+
+=======================
+
+Finset.Colex.le_def :
+
+∀ {α : Type u_1} [inst : PartialOrder α] {s t : Finset.Colex α},
+  s ≤ t ↔ ∀ ⦃a : α⦄, a ∈ s.ofColex → a ∉ t.ofColex → ∃ b ∈ t.ofColex, b ∉ s.ofColex ∧ a ≤ b
+
+=======================
+
+Set.Definable.mono :
+
+∀ {M : Type w} {A : Set M} {L : FirstOrder.Language} [inst : L.Structure M] {α : Type u₁} {B : Set M} {s : Set (α → M)},
+  A.Definable L s → A ⊆ B → B.Definable L s
+
+=======================
+
+Nat.Partition.count_ofSums_of_ne_zero :
+
+∀ {n : ℕ} {l : Multiset ℕ} (hl : l.sum = n) {i : ℕ},
+  i ≠ 0 → Multiset.count i (Nat.Partition.ofSums n l hl).parts = Multiset.count i l
+
+=======================
+
+Nat.mem_primeFactorsList_mul_of_coprime :
+
+∀ {a b : ℕ}, a.Coprime b → ∀ (p : ℕ), p ∈ (a * b).primeFactorsList ↔ p ∈ a.primeFactorsList ∪ b.primeFactorsList
+
+=======================
+
+Real.inv_logb_div_base :
+
+∀ {a b : ℝ}, a ≠ 0 → b ≠ 0 → ∀ (c : ℝ), (Real.logb (a / b) c)⁻¹ = (Real.logb a c)⁻¹ - (Real.logb b c)⁻¹
+
+=======================
+
+Set.isAtom_iff :
+
+∀ {α : Type u_2} {s : Set α}, IsAtom s ↔ ∃ x, s = {x}
+
+=======================
+
+Finset.coe_nonempty :
+
+∀ {α : Type u_1} {s : Finset α}, (↑s).Nonempty ↔ s.Nonempty
+
+=======================
+
+Finset.prod_Ioo_mul_right :
+
+∀ {α : Type u_1} {M : Type u_2} [inst : CommMonoid M] {f : α → M} {a b : α} [inst_1 : PartialOrder α]
+  [inst_2 : LocallyFiniteOrder α], a < b → (∏ x ∈ Finset.Ioo a b, f x) * f b = ∏ x ∈ Finset.Ioc a b, f x
+
+=======================
+
+Nat.factorization_choose_eq_zero_of_lt :
+
+∀ {p n k : ℕ}, n < p → (n.choose k).factorization p = 0
+
+=======================
+
+Set.VAddAntidiagonal.eq_of_fst_le_fst_of_snd_le_snd :
+
+∀ {G : Type u_1} {P : Type u_2} {s : Set G} {t : Set P} {a : P} [inst : PartialOrder G] [inst_1 : PartialOrder P]
+  [inst_2 : VAdd G P] [IsOrderedCancelVAdd G P] {x y : ↑(s.vaddAntidiagonal t a)},
+  (↑x).1 ≤ (↑y).1 → (↑x).2 ≤ (↑y).2 → x = y
+
+=======================
+
+Finset.isPWO_sup :
+
+∀ {ι : Type u_1} {α : Type u_2} [inst : Preorder α] (s : Finset ι) {f : ι → Set α},
+  (s.sup f).IsPWO ↔ ∀ i ∈ s, (f i).IsPWO
+
+=======================
+
+Int.dvd_div_iff_mul_dvd :
+
+∀ {a b c : ℤ}, c ∣ b → (a ∣ b / c ↔ c * a ∣ b)
+
+=======================
+
+Finset.prod_Ico_add :
+
+∀ {α : Type u_1} {M : Type u_3} [inst : CommMonoid M] [inst_1 : AddCommMonoid α] [inst_2 : PartialOrder α]
+  [IsOrderedCancelAddMonoid α] [ExistsAddOfLE α] [inst_5 : LocallyFiniteOrder α] (f : α → M) (a b c : α),
+  ∏ x ∈ Finset.Ico a b, f (c + x) = ∏ x ∈ Finset.Ico (a + c) (b + c), f x
+
+=======================
+
+Real.cosh_add :
+
+∀ (x y : ℝ), Real.cosh (x + y) = Real.cosh x * Real.cosh y + Real.sinh x * Real.sinh y
+
+=======================
+
+Set.mem_ordConnectedComponent :
+
+∀ {α : Type u_1} [inst : LinearOrder α] {s : Set α} {x y : α}, y ∈ s.ordConnectedComponent x ↔ Set.uIcc x y ⊆ s
+
+=======================
+
+Nat.lt_of_shiftLeft_lt :
+
+∀ {a b c : ℕ}, a <<< b < c → a < c
+
+=======================
+
+Set.mulIndicator_le_mulIndicator_apply_of_subset :
+
+∀ {α : Type u_2} {M : Type u_3} [inst : Preorder M] [inst_1 : One M] {s t : Set α} {f : α → M} {a : α},
+  s ⊆ t → 1 ≤ f a → s.mulIndicator f a ≤ t.mulIndicator f a
+
+=======================
+
+Finset.Nat.sum_antidiagonal_succ :
+
+∀ {N : Type u_2} [inst : AddCommMonoid N] {n : ℕ} {f : ℕ × ℕ → N},
+  ∑ p ∈ Finset.antidiagonal (n + 1), f p = f (0, n + 1) + ∑ p ∈ Finset.antidiagonal n, f (p.1 + 1, p.2)
+
+=======================
+
+Real.logb_rpow :
+
+∀ {b x : ℝ}, 0 < b → b ≠ 1 → Real.logb b (b ^ x) = x
+
+=======================
+
